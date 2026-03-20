@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hortcon Handyman Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+
+<header class="site-header">
+
+  <button class="burger" id="burgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="brand">
+    <h1>Hortcon Handyman Services</h1>
+    <p>Property Maintenance Specialist</p>
+  </div>
+
+  <div class="header-vine-full"></div>
+
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#hero">Home</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Reliable outdoor care</p>
+    <h2>Garden and property maintenance done right</h2>
+    <a href="#contact" class="primary-btn">Get a Quote</a>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="section-heading">
+    <p class="eyebrow green">Our Services</p>
+    <h2>What Steve can help with</h2>
+  </div>
+
+  <div class="service-list">
+
+    <article class="service-card">
+      <img src="imgs/garden-renovation.jpg" alt="Garden renovation" />
+      <div class="service-card-content">
+        <h3>Garden Renovation</h3>
+        <p>Refresh and transform tired outdoor spaces into something neat, functional and inviting.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="imgs/gutter-cleaning.jpg" alt="Gutter cleaning" />
+      <div class="service-card-content">
+        <h3>Gutter Cleaning</h3>
+        <p>Keep gutters clear and flowing properly to help protect your home from water damage.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="imgs/building-maintenance.jpg" alt="Building maintenance" />
+      <div class="service-card-content">
+        <h3>Building Maintenance</h3>
+        <p>General upkeep and handyman work to keep your property looking good and working well.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="imgs/mowing.jpg" alt="Mowing and garden maintenance" />
+      <div class="service-card-content">
+        <h3>Mowing and Garden Maintenance</h3>
+        <p>Regular mowing, trimming and tidy-ups to keep your yard clean, healthy and presentable.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="imgs/garden-edging.jpg" alt="Garden edging using Sienna Pine" />
+      <div class="service-card-content">
+        <h3>Garden Edging</h3>
+        <p>Garden edging using Sienna Pine for clean borders and a polished finish around garden beds.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="imgs/solar-cleaning.jpg" alt="Solar panel cleaning" />
+      <div class="service-card-content">
+        <h3>Solar Panel Cleaning</h3>
+        <p>Solar panel cleaning with before and after results to help panels look better and perform better.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+
+  <div class="section-heading">
+    <p class="eyebrow">Get a quote</p>
+    <h2>Request a Quote</h2>
+  </div>
+
+  <form class="contact-form">
+
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+
+    <select required>
+      <option value="">Select a service</option>
+      <option>Garden Renovation</option>
+      <option>Gutter Cleaning</option>
+      <option>Building Maintenance</option>
+      <option>Mowing & Garden Maintenance</option>
+      <option>Garden Edging (Sienna Pine)</option>
+      <option>Solar Panel Cleaning</option>
+      <option>Other</option>
+    </select>
+
+    <textarea rows="5" placeholder="Tell us more about the job..."></textarea>
+
+    <button type="submit" class="primary-btn form-btn">
+      Get Quote
+    </button>
+
+  </form>
+
+</section>
+
+<a href="#contact" class="quote-floating-btn" id="quoteBtn">Get a Quote</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const burgerBtn = document.getElementById("burgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const quoteBtn = document.getElementById("quoteBtn");
+  const contactSection = document.getElementById("contact");
+
+  burgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  function checkVisibility(){
+    const rect = contactSection.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      quoteBtn.classList.add("hide");
+    } else {
+      quoteBtn.classList.remove("hide");
+    }
+  }
+
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility();
+
+});
+</script>
+
+</body>
+</html>
