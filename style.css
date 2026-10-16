@@ -1,3 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap");
+
+/* THEME (Night Forest) — every colour, font and corner size lives here.
+   Use these variables in rules below instead of raw hex values. */
+:root {
+  --font-body: "Outfit", Arial, sans-serif;
+  --font-heading: "Outfit", Arial, sans-serif;
+  --heading-transform: none;
+  --heading-spacing: normal;
+
+  --page-top: #0f1a12;
+  --page-bottom: #0a120c;
+  --text: #e8efe6;
+  --text-muted: #a9b8a8;
+  --text-faint: #8fa08e;
+  --heading-color: #f2f7ef;
+
+  --primary: #1d3323;
+  --primary-hover: #26422d;
+  --burger: #26422d;
+  --eyebrow: #a8d65c;
+  --accent: #a8d65c;
+  --accent-text: #0f1a12;
+
+  --header-bg: rgba(15, 26, 18, 0.92);
+  --surface: #17241a;
+  --panel: #132017;
+  --border: #2a3d2e;
+  --shadow: rgba(0, 0, 0, 0.4);
+
+  --hero-shade: 8, 14, 10;
+  --hero-bg: radial-gradient(circle at 20% 30%, #1d3323 0%, #0f1a12 70%);
+  --blob-1: #a8d65c;
+  --blob-2: #2e791a;
+
+  --radius-card: 20px;
+  --radius-input: 14px;
+  --radius-btn: 999px;
+  --radius-panel: 28px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,10 +50,18 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(to bottom, #f6f4ee, #2e791a);
-  color: #1f2a1f;
+  font-family: var(--font-body);
+  background: linear-gradient(to bottom, var(--page-top), var(--page-bottom));
+  color: var(--text);
   line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-spacing);
 }
 
 /* HEADER */
@@ -22,14 +71,14 @@ body {
   left: 0;
   width: 100%;
   height: 74px;
-  background: rgba(246, 244, 238, 0.96);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 0 16px;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   overflow: visible;
 }
 
@@ -38,7 +87,7 @@ body {
   width: 44px;
   height: 44px;
   border: none;
-  background: #2f5d3a;
+  background: var(--burger);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -61,12 +110,12 @@ body {
 .brand h1 {
   font-size: 1.05rem;
   line-height: 1.1;
-  color: #23442b;
+  color: var(--heading-color);
 }
 
 .brand p {
   font-size: 0.82rem;
-  color: #7c7c7c;
+  color: var(--text-faint);
   margin-top: 2px;
 }
 
@@ -76,7 +125,7 @@ body {
   top: 74px;
   left: 0;
   width: 100%;
-  background: #23442b;
+  background: var(--primary);
   display: flex;
   flex-direction: column;
   padding: 10px 16px 16px;
@@ -118,24 +167,10 @@ body {
   }
 }
 
-/* wide screens: whole trailer on the right, text on dark green to the left */
-@media (min-width: 768px) and (min-aspect-ratio: 1/1) {
-  .hero {
-    background-color: #23442b;
-    background-size: auto 100%;
-    background-position: right center;
-    background-repeat: no-repeat;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(to right, rgba(20, 28, 20, 0.85) 50%, rgba(20, 28, 20, 0) 75%);
-  }
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20, 28, 20, 0.72), rgba(20, 28, 20, 0.2));
+  background: linear-gradient(to top, rgba(var(--hero-shade), 0.72), rgba(var(--hero-shade), 0.2));
 }
 
 .hero-content {
@@ -144,6 +179,10 @@ body {
   width: 100%;
   max-width: 520px;
   color: #ffffff;
+}
+
+.hero-photo {
+  display: none;
 }
 
 .hero-content h2 {
@@ -168,19 +207,19 @@ body {
 }
 
 .eyebrow.green {
-  color: #3d6b47;
+  color: var(--eyebrow);
   opacity: 1;
 }
 
 /* BUTTON */
 .primary-btn {
   display: inline-block;
-  background: #7bb661;
-  color: #102010;
+  background: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
   font-weight: 700;
   padding: 14px 20px;
-  border-radius: 999px;
+  border-radius: var(--radius-btn);
   border: none;
   cursor: pointer;
 }
@@ -202,9 +241,9 @@ body {
   text-decoration: none;
   font-weight: 700;
   padding: 12px 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-btn);
   border: 2px solid rgba(255, 255, 255, 0.85);
-  background: rgba(20, 28, 20, 0.25);
+  background: rgba(var(--hero-shade), 0.25);
 }
 
 /* SECTIONS */
@@ -220,7 +259,7 @@ body {
 .section-heading h2 {
   font-size: 1.8rem;
   line-height: 1.1;
-  color: #23442b;
+  color: var(--heading-color);
 }
 
 /* SERVICE CARDS */
@@ -232,10 +271,10 @@ body {
 
 .service-card {
   width: 100%;
-  background: #ffffff;
-  border-radius: 22px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(30, 45, 30, 0.12);
+  box-shadow: 0 12px 30px var(--shadow);
 }
 
 .service-card img {
@@ -299,20 +338,20 @@ body {
 
 .service-card-content h3 {
   font-size: 1.28rem;
-  color: #23442b;
+  color: var(--heading-color);
   margin-bottom: 8px;
 }
 
 .service-card-content p {
   font-size: 0.98rem;
-  color: #536053;
+  color: var(--text-muted);
 }
 
 /* CONTACT */
 .contact-section {
-  background: #e8efe3;
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
+  background: var(--panel);
+  border-top-left-radius: var(--radius-panel);
+  border-top-right-radius: var(--radius-panel);
 }
 
 .contact-form {
@@ -325,12 +364,18 @@ body {
 .contact-form textarea,
 .contact-form select {
   width: 100%;
-  border: 1px solid #d3dbcf;
-  background: #ffffff;
-  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-input);
   padding: 15px 16px;
+  font-family: inherit;
   font-size: 1rem;
-  color: #1f2a1f;
+  color: var(--text);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #7f907e;
 }
 
 .contact-form textarea {
@@ -350,14 +395,14 @@ body {
 
 .form-status {
   padding: 14px 16px;
-  border-radius: 16px;
+  border-radius: var(--radius-input);
   font-weight: 700;
 }
 
 .form-status.success {
-  background: #ffffff;
-  color: #23442b;
-  border: 1px solid #7bb661;
+  background: var(--surface);
+  color: var(--heading-color);
+  border: 1px solid var(--accent);
 }
 
 .form-status.error {
@@ -395,14 +440,14 @@ body.menu-open .header-vine-full {
   position: fixed;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.1;
+  opacity: 0.08;
   z-index: -1;
 }
 
 .blob-1 {
   width: 300px;
   height: 300px;
-  background: #0e8414;
+  background: var(--blob-1);
   top: 100px;
   left: -100px;
 }
@@ -410,7 +455,7 @@ body.menu-open .header-vine-full {
 .blob-2 {
   width: 350px;
   height: 350px;
-  background: #116214;
+  background: var(--blob-2);
   bottom: -120px;
   right: -100px;
 }
@@ -421,20 +466,20 @@ body.menu-open .header-vine-full {
   right: 16px;
   bottom: 16px;
   z-index: 1000;
-  background: #23442b;
+  background: var(--primary);
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 14px 18px;
-  border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(24, 36, 24, 0.22);
+  border-radius: var(--radius-btn);
+  box-shadow: 0 10px 24px rgba(var(--hero-shade), 0.22);
   transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
 }
 
 .quote-floating-btn:hover {
   transform: translateY(-2px);
-  background: #2d5636;
+  background: var(--primary-hover);
 }
 
 .quote-floating-btn:active {
@@ -474,5 +519,64 @@ body.menu-open .header-vine-full {
 
   .brand h1 {
     font-size: 1.5rem;
+  }
+
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .services-section > *,
+  .contact-section > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-section > * {
+    max-width: 720px;
+  }
+}
+
+/* DESKTOP: text on the left, trailer as a framed photo on the right */
+@media (min-width: 1000px) {
+  .hero {
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    padding: 140px 48px 80px;
+    background: var(--hero-bg);
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .hero-content h2 {
+    font-size: 3.4rem;
+  }
+
+  .hero-photo {
+    display: block;
+    width: min(40vw, 500px);
+    height: min(68vh, 620px);
+    object-fit: cover;
+    object-position: center 45%;
+    border-radius: var(--radius-card);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .service-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-card img {
+    height: 300px;
   }
 }
