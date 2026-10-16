@@ -38,11 +38,12 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="eyebrow">Reliable outdoor care</p>
-    <h2>
-    Garden and property maintenance done right<br>
-    Contact Steve - 0421848046
-    </h2>
-    <a href="#contact" class="primary-btn">Get a Quote</a>
+    <h2>Garden and property maintenance done right</h2>
+    <p class="hero-credit">Steve Barry &middot; Qualified Horticulturalist</p>
+    <div class="hero-actions">
+      <a href="#contact" class="primary-btn">Get a Quote</a>
+      <a href="tel:0421848046" class="phone-btn">Call Steve 0421 848 046</a>
+    </div>
   </div>
 </section>
 
@@ -55,7 +56,14 @@
   <div class="service-list">
 
     <article class="service-card">
-      <img src="imgs/garden-renovation.jpg" alt="Garden renovation" />
+      <div class="card-gallery-wrap">
+        <div class="card-gallery">
+          <img src="imgs/gardenreno1.jpg" alt="Raised steel vegetable garden beds on a gravel yard" />
+          <img src="imgs/gardenreno2.jpg" alt="Row of magnolia shrubs planted in a brick garden bed beside a deck" />
+          <img src="imgs/gardenreno3.jpg" alt="New timber garden bed edging being installed in a courtyard" />
+        </div>
+        <div class="gallery-dots"></div>
+      </div>
       <div class="service-card-content">
         <h3>Garden Renovation</h3>
         <p>Refresh and transform tired outdoor spaces into something neat, functional and inviting.</p>
@@ -70,8 +78,6 @@
       </div>
     </article>
 
-   
-
     <article class="service-card">
       <img src="imgs/mowing.jpg" alt="Mowing and garden maintenance" />
       <div class="service-card-content">
@@ -81,7 +87,7 @@
     </article>
 
     <article class="service-card">
-      <img src="imgs/garden-edging.jpg" alt="Garden edging using Sienna Pine" />
+      <img src="imgs/garden-edging.jpg" alt="Stepping stone pathway set in white pebbles beside a lawn" />
       <div class="service-card-content">
         <h3>Stepping Stones</h3>
         <p>Stepping stones designed to make every pathway stand out.</p>
@@ -89,7 +95,7 @@
     </article>
 
     <article class="service-card">
-      <img src="imgs/pressure_washing.jpg" alt="Garden edging using Sienna Pine" />
+      <img src="imgs/pressure-washing.jpg" alt="Pressure washing outdoor pavers" />
       <div class="service-card-content">
         <h3>Pressure Washing</h3>
         <p>Professional pressure washing to restore driveways, paths and solid surfaces.</p>
@@ -114,9 +120,9 @@
     <h2>Request a Quote</h2>
   </div>
 
-<form class="contact-form" action="https://formspree.io/f/meepjlbb" method="POST">
+<form class="contact-form" id="quoteForm" action="https://formspree.io/f/meepjlbb" method="POST">
 
-  <input type="text" name="name" placeholder="Your Name">
+  <input type="text" name="name" placeholder="Your Name" required>
 
   <input type="tel" name="phone" placeholder="Phone Number" required>
 
@@ -124,9 +130,9 @@
     <option value="">Select a service</option>
     <option>Garden Renovation</option>
     <option>Gutter Cleaning</option>
-    <option>Building Maintenance</option>
-    <option>Mowing & Garden Maintenance</option>
+    <option>Mowing and Garden Maintenance</option>
     <option>Stepping Stones</option>
+    <option>Pressure Washing</option>
     <option>Solar Panel Cleaning</option>
     <option>Other</option>
   </select>
@@ -136,6 +142,8 @@
   <button type="submit" class="primary-btn form-btn">
     Get Quote
   </button>
+
+  <p class="form-status" id="formStatus" role="status"></p>
 
 </form>
 
@@ -175,6 +183,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", checkVisibility);
   checkVisibility();
+
+  document.querySelectorAll(".card-gallery-wrap").forEach(wrap => {
+    const gallery = wrap.querySelector(".card-gallery");
+    const dotsBox = wrap.querySelector(".gallery-dots");
+    const slides = gallery.querySelectorAll("img");
+
+    const dots = [...slides].map((slide, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Show photo ${i + 1}`);
+      dot.addEventListener("click", () => {
+        gallery.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
+      });
+      dotsBox.appendChild(dot);
+      return dot;
+    });
+
+    function updateDots(){
+      const current = Math.round(gallery.scrollLeft / gallery.clientWidth);
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
+    }
+
+    gallery.addEventListener("scroll", updateDots);
+    updateDots();
+  });
+
+  const quoteForm = document.getElementById("quoteForm");
+  const formStatus = document.getElementById("formStatus");
+  const formBtn = quoteForm.querySelector("button");
+
+  quoteForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    formBtn.disabled = true;
+    formBtn.textContent = "Sending...";
+    formStatus.className = "form-status";
+    formStatus.textContent = "";
+
+    try {
+      const res = await fetch(quoteForm.action, {
+        method: "POST",
+        body: new FormData(quoteForm),
+        headers: { Accept: "application/json" }
+      });
+      if (!res.ok) throw new Error();
+
+      quoteForm.reset();
+      formStatus.classList.add("success");
+      formStatus.textContent = "Thanks! Steve will be in touch soon.";
+    } catch {
+      formStatus.classList.add("error");
+      formStatus.innerHTML = `Sorry, that didn't send. Please call Steve on <a href="tel:0421848046">0421 848 046</a>.`;
+    }
+
+    formBtn.disabled = false;
+    formBtn.textContent = "Get Quote";
+  });
 
 });
 </script>
