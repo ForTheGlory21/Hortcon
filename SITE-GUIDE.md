@@ -41,7 +41,7 @@ A reference for what the site does, what it still needs, and the style rules to 
    - Gutter Cleaning
    - Mowing and Garden Maintenance
    - Stepping Stones (uses `garden-edging.jpg`)
-   - Pressure Washing
+   - Pressure Washing — a gallery of `pressurewash1.jpg`, `pressurewash2.jpg` (Steve's own jobs), then the stock `pressure-washing.jpg`
    - Solar Panel Cleaning
 6. **Quote request** (`#contact`) — slightly lighter dark-green panel with rounded top corners, centred at 720px max on wider screens. Form fields:
    - Name (required)
