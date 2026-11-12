@@ -2,221 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hortcon Handyman Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Hortcon Handyman Services | Garden and Property Maintenance</title>
+  <meta name="description" content="Garden renovation, mowing, gutter cleaning and pressure washing by Steve Barry, qualified horticulturalist. Call 0421 848 046 for a quote." />
+  <meta name="theme-color" content="#0a0c0b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Exo+2:ital,wght@1,700;1,800&family=Kaushan+Script&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="bg-blob blob-1"></div>
-<div class="bg-blob blob-2"></div>
+<!-- phone icon, reused by every call button -->
+<svg style="display:none"><symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol></svg>
 
 <header class="site-header">
-
-  <button class="burger" id="burgerBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <div class="brand">
-    <h1>Hortcon Handyman Services</h1>
-    <p>Property Maintenance Specialist</p>
-  </div>
-
-  <div class="header-vine-full"></div>
-
+  <a class="logo" href="#top" aria-label="Hortcon Handyman Services, back to top"><b><i>Hort</i><i>Con</i></b><span>Handyman Services</span></a>
+  <a class="header-call" href="tel:0421848046" aria-label="Call Steve on 0421 848 046"><svg><use href="#phone"/></svg><span>0421 848 046</span></a>
 </header>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="#hero">Home</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+<main id="top">
 
-<section class="hero" id="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="eyebrow">Reliable outdoor care</p>
-    <h2>Garden and property maintenance done right</h2>
-    <p class="hero-credit">Steve Barry &middot; Qualified Horticulturalist</p>
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="Gardens and lawns looked after by Hortcon"><i></i><i></i><i></i></div>
+
+  <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Qualified Horticulturalist, Steve Barry">
+    <circle cx="60" cy="60" r="58" fill="#d7f25a"/>
+    <circle cx="60" cy="60" r="31" fill="none" stroke="#0a0c0b" stroke-width="1.5" stroke-dasharray="2 4"/>
+    <path id="sealPath" d="M16 60a44 44 0 1 1 88 0a44 44 0 1 1-88 0" fill="none"/>
+    <text fill="#0a0c0b"><textPath href="#sealPath" textLength="270">QUALIFIED HORTICULTURALIST • STEVE BARRY •</textPath></text>
+    <g transform="rotate(28 60 60)"><path d="M60 38C76 46 76 70 60 82C44 70 44 46 60 38Z" fill="#14804f"/><path d="M60 46V88" stroke="#0a0c0b" stroke-width="2" stroke-linecap="round"/></g>
+  </svg>
+
+  <div class="hero-text">
+    <h1><span>We go the</span><br><em>extra yard.</em></h1>
+    <p class="lead">Garden makeovers, mowing, gutters and pressure washing, done properly by a local who knows plants.</p>
     <div class="hero-actions">
-      <a href="#contact" class="primary-btn">Get a Quote</a>
-      <a href="tel:0421848046" class="phone-btn">Call Steve 0421 848 046</a>
+      <a class="btn call" href="tel:0421848046"><svg><use href="#phone"/></svg>Call Steve 0421 848 046</a>
+      <a class="btn ghost" href="#quote">Get a quote</a>
     </div>
   </div>
-  <img class="hero-photo" src="imgs/truck.jpg" alt="Hortcon Handyman Services trailer showing services and Steve's phone number" />
 </section>
 
-<section class="services-section" id="services">
-  <div class="section-heading">
-    <p class="eyebrow green">Our Services</p>
-    <h2>What Steve can help with</h2>
-  </div>
+<!-- Scrolling band. The two lines must be identical so the loop has no gap. -->
+<div class="ticker" aria-hidden="true">
+  <p>Garden Renovation<i></i>Mowing &amp; Pruning<i></i>Gutter Cleaning<i></i>Gutter Guard<i></i>Pressure Washing<i></i>Small Concrete Jobs<i></i>Excavation<i></i></p>
+  <p>Garden Renovation<i></i>Mowing &amp; Pruning<i></i>Gutter Cleaning<i></i>Gutter Guard<i></i>Pressure Washing<i></i>Small Concrete Jobs<i></i>Excavation<i></i></p>
+</div>
 
-  <div class="service-list">
+<ul class="trust">
+  <li>Qualified horticulturalist</li>
+  <li>Local and reliable</li>
+  <li>Deal direct with Steve</li>
+</ul>
 
-    <article class="service-card">
-      <div class="card-gallery-wrap">
-        <div class="card-gallery">
-          <img src="imgs/gardenreno1.jpg" alt="Raised steel vegetable garden beds on a gravel yard" />
-          <img src="imgs/gardenreno2.jpg" alt="Row of magnolia shrubs planted in a brick garden bed beside a deck" />
-          <img src="imgs/gardenreno3.jpg" alt="New timber garden bed edging being installed in a courtyard" />
-        </div>
-        <div class="gallery-dots"></div>
-      </div>
-      <div class="service-card-content">
-        <h3>Garden Renovation</h3>
-        <p>Refresh and transform tired outdoor spaces into something neat, functional and inviting.</p>
-      </div>
-    </article>
+<section class="services" id="services">
+  <p class="eyebrow">Services</p>
+  <h2>What Steve can help with</h2>
 
-    <article class="service-card">
-      <img src="imgs/gutter-cleaning.jpg" alt="Gutter cleaning" />
-      <div class="service-card-content">
-        <h3>Gutter Cleaning</h3>
-        <p>Keep gutters clear and flowing properly to help protect your home from water damage.</p>
-      </div>
-    </article>
+  <ul class="service-grid">
+    <li>
+      <img src="imgs/gardenreno1.jpg" alt="Raised steel vegetable garden beds on a gravel yard" />
+      <div><h3>Garden Renovation</h3><p>Tired yards made neat, useful and inviting.</p></div>
+    </li>
+    <li>
+      <img src="imgs/mowing.jpg" alt="Freshly mown lawn inside a fenced backyard" loading="lazy" />
+      <div><h3>Mowing and Garden Maintenance</h3><p>Regular mowing, trimming and tidy-ups.</p></div>
+    </li>
+    <li>
+      <img src="imgs/gutter-cleaning.jpg" alt="Gloved hand clearing leaves from a gutter" loading="lazy" />
+      <div><h3>Gutter Cleaning</h3><p>Clear gutters that protect your home from water damage.</p></div>
+    </li>
+    <li>
+      <img src="imgs/pressurewash1.jpg" alt="Pressure washing a concrete driveway beside a garden bed" loading="lazy" />
+      <div><h3>Pressure Washing</h3><p>Driveways, paths and pavers brought back to clean.</p></div>
+    </li>
+    <li>
+      <img src="imgs/garden-edging.jpg" alt="Stepping stone path set in white pebbles beside a lawn" loading="lazy" />
+      <div><h3>Stepping Stones</h3><p>Pathways that make the whole yard stand out.</p></div>
+    </li>
+    <li>
+      <img src="imgs/solar-cleaning.jpg" alt="Clean solar panels on a green roof" loading="lazy" />
+      <div><h3>Solar Panel Cleaning</h3><p>Clean panels look better and work better.</p></div>
+    </li>
+  </ul>
 
-    <article class="service-card">
-      <img src="imgs/mowing.jpg" alt="Mowing and garden maintenance" />
-      <div class="service-card-content">
-        <h3>Mowing and Garden Maintenance</h3>
-        <p>Regular mowing, trimming and tidy-ups to keep your yard clean, healthy and presentable.</p>
-      </div>
-    </article>
+  <p class="also">Also: <span>Pruning</span><span>Gutter Guard</span><span>Small Concrete Jobs</span><span>Excavation</span></p>
+</section>
 
-    <article class="service-card">
-      <img src="imgs/garden-edging.jpg" alt="Stepping stone pathway set in white pebbles beside a lawn" />
-      <div class="service-card-content">
-        <h3>Stepping Stones</h3>
-        <p>Stepping stones designed to make every pathway stand out.</p>
-      </div>
-    </article>
+<section class="work" id="work">
+  <p class="eyebrow">Our work</p>
+  <h2>Real jobs, real backyards</h2>
 
-    <article class="service-card">
-      <div class="card-gallery-wrap">
-        <div class="card-gallery">
-          <img src="imgs/pressurewash1.jpg" alt="Pressure washing a concrete driveway beside a garden bed, with the Hortcon trailer in the background" />
-          <img src="imgs/pressurewash2.jpg" alt="Petrol pressure washer set up on a freshly cleaned concrete path" />
-          <img src="imgs/pressure-washing.jpg" alt="Pressure washing outdoor pavers" />
-        </div>
-        <div class="gallery-dots"></div>
-      </div>
-      <div class="service-card-content">
-        <h3>Pressure Washing</h3>
-        <p>Professional pressure washing to restore driveways, paths and solid surfaces.</p>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <img src="imgs/solar-cleaning.jpg" alt="Solar panel cleaning" />
-      <div class="service-card-content">
-        <h3>Solar Panel Cleaning</h3>
-        <p>Solar panel cleaning with before and after results to help panels look better and perform better.</p>
-      </div>
-    </article>
-
+  <div class="polaroids">
+    <figure><img src="imgs/paved-courtyard.jpg" alt="Circular paved courtyard with a raised brick planter in the centre" loading="lazy" /><figcaption>Paved courtyard</figcaption></figure>
+    <figure><img src="imgs/pebble-courtyard.jpg" alt="White pebble courtyard with a sundial, garden bench and potted plants" loading="lazy" /><figcaption>Pebble courtyard</figcaption></figure>
+    <figure><img src="imgs/building-maintenance.jpg" alt="Front garden with new timber edging, mulch and young plants" loading="lazy" /><figcaption>New front garden</figcaption></figure>
+    <figure><img src="imgs/patio-pavers.jpg" alt="Paved patio with a pergola and outdoor table, edged with stepping pavers in gravel" loading="lazy" /><figcaption>Patio and steppers</figcaption></figure>
+    <figure><img src="imgs/gardenreno3.jpg" alt="New timber garden bed edging in a courtyard" loading="lazy" /><figcaption>Fresh timber edging</figcaption></figure>
+    <figure><img src="imgs/concrete-path.jpg" alt="New concrete path and gravel strip along the side of a brick house" loading="lazy" /><figcaption>Concrete path</figcaption></figure>
+    <figure><img src="imgs/lawn-stripes.jpg" alt="Freshly mown striped lawn curving around a mulched garden bed" loading="lazy" /><figcaption>Fresh-cut lawn</figcaption></figure>
+    <figure><img src="imgs/truck.jpg" alt="The black Hortcon trailer with its services and phone number on the side" loading="lazy" /><figcaption>Look for the trailer</figcaption></figure>
   </div>
 </section>
 
-<section class="contact-section" id="contact">
+<section class="steps">
+  <p class="eyebrow">How it works</p>
+  <h2>Sorted in three steps</h2>
 
-  <div class="section-heading">
-    <p class="eyebrow">Get a quote</p>
-    <h2>Request a Quote</h2>
-  </div>
-
-<form class="contact-form" id="quoteForm" action="https://formspree.io/f/meepjlbb" method="POST">
-
-  <input type="text" name="name" placeholder="Your Name" required>
-
-  <input type="tel" name="phone" placeholder="Phone Number" required>
-
-  <select name="service">
-    <option value="">Select a service</option>
-    <option>Garden Renovation</option>
-    <option>Gutter Cleaning</option>
-    <option>Mowing and Garden Maintenance</option>
-    <option>Stepping Stones</option>
-    <option>Pressure Washing</option>
-    <option>Solar Panel Cleaning</option>
-    <option>Other</option>
-  </select>
-
-  <textarea name="message" rows="5" placeholder="Tell us more about the job..."></textarea>
-
-  <button type="submit" class="primary-btn form-btn">
-    Get Quote
-  </button>
-
-  <p class="form-status" id="formStatus" role="status"></p>
-
-</form>
-
+  <ol>
+    <li><h3>Call or message Steve</h3><p>Tell him what needs doing.</p></li>
+    <li><h3>Get a clear quote</h3><p>You know the price before work starts.</p></li>
+    <li><h3>Job done right</h3><p>Tidy work, and the place left clean.</p></li>
+  </ol>
 </section>
 
-<a href="#contact" class="quote-floating-btn" id="quoteBtn">Get a Quote</a>
+<section class="quote" id="quote">
+  <p class="eyebrow">Get a quote</p>
+  <h2>Tell Steve about the job</h2>
+
+  <form class="quote-form" id="quoteForm" action="https://formspree.io/f/meepjlbb" method="POST">
+    <label>Your name <input type="text" name="name" autocomplete="name" required /></label>
+    <label>Phone number <input type="tel" name="phone" autocomplete="tel" required /></label>
+    <label>Service
+      <select name="service">
+        <option value="">Select a service</option>
+        <option>Garden Renovation</option>
+        <option>Mowing and Garden Maintenance</option>
+        <option>Gutter Cleaning</option>
+        <option>Pressure Washing</option>
+        <option>Stepping Stones</option>
+        <option>Solar Panel Cleaning</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label>About the job <textarea name="message" rows="4"></textarea></label>
+    <button type="submit" class="btn sun">Get a quote</button>
+    <p class="form-status" id="formStatus" role="status"></p>
+  </form>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <a class="logo" href="#top" aria-label="Hortcon Handyman Services, back to top"><b><i>Hort</i><i>Con</i></b><span>Handyman Services</span></a>
+  <p>Property Maintenance Specialist</p>
+  <p>Steve Barry &middot; Qualified Horticulturalist</p>
+  <p><a href="tel:0421848046">0421 848 046</a> &middot; hortcon.com.au</p>
+</footer>
+
+<nav class="cta-bar" aria-label="Contact">
+  <div class="mow" aria-hidden="true"><svg viewBox="0 0 34 24"><path d="M9 13 1 2" stroke="#d5dad8" stroke-width="2" stroke-linecap="round"/><rect x="6" y="11" width="24" height="8" rx="2.5" fill="#e5412d"/><rect x="13" y="6" width="10" height="6" rx="1.5" fill="#1c2321" stroke="#d5dad8"/><circle cx="10" cy="20" r="3.5" fill="#0a0c0b" stroke="#d5dad8" stroke-width="1.5"/><circle cx="27" cy="20" r="3.5" fill="#0a0c0b" stroke="#d5dad8" stroke-width="1.5"/></svg></div>
+  <a class="btn call" href="tel:0421848046"><svg><use href="#phone"/></svg>Call Steve</a>
+  <a class="btn ghost" href="#quote">Get a quote</a>
+</nav>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const burgerBtn = document.getElementById("burgerBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const quoteBtn = document.getElementById("quoteBtn");
-  const contactSection = document.getElementById("contact");
-
-  burgerBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-  });
-
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-      document.body.classList.remove("menu-open");
+  // Scroll reveal: things slide in the first time they come on screen.
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        reveal.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll("section:not(.hero) > :not(.service-grid):not(ol), .service-grid li, .steps li, .trust li").forEach(el => {
+    el.classList.add("rv");
+    reveal.observe(el);
   });
 
-  function checkVisibility(){
-    const rect = contactSection.getBoundingClientRect();
+  // Mower: --p runs from 0 at the top of the page to 1 at the bottom.
+  const root = document.documentElement;
+  window.addEventListener("scroll", () => {
+    root.style.setProperty("--p", window.scrollY / (root.scrollHeight - window.innerHeight));
+  }, { passive: true });
 
-    if(rect.top < window.innerHeight && rect.bottom > 0){
-      quoteBtn.classList.add("hide");
-    } else {
-      quoteBtn.classList.remove("hide");
-    }
-  }
-
-  window.addEventListener("scroll", checkVisibility);
-  checkVisibility();
-
-  document.querySelectorAll(".card-gallery-wrap").forEach(wrap => {
-    const gallery = wrap.querySelector(".card-gallery");
-    const dotsBox = wrap.querySelector(".gallery-dots");
-    const slides = gallery.querySelectorAll("img");
-
-    const dots = [...slides].map((slide, i) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.setAttribute("aria-label", `Show photo ${i + 1}`);
-      dot.addEventListener("click", () => {
-        gallery.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
-      });
-      dotsBox.appendChild(dot);
-      return dot;
-    });
-
-    function updateDots(){
-      const current = Math.round(gallery.scrollLeft / gallery.clientWidth);
-      dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
-    }
-
-    gallery.addEventListener("scroll", updateDots);
-    updateDots();
-  });
-
+  // Quote form: sends to Formspree in the background so the customer stays on the page.
   const quoteForm = document.getElementById("quoteForm");
   const formStatus = document.getElementById("formStatus");
   const formBtn = quoteForm.querySelector("button");
@@ -245,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     formBtn.disabled = false;
-    formBtn.textContent = "Get Quote";
+    formBtn.textContent = "Get a quote";
   });
 
 });
